@@ -1,7 +1,5 @@
 import firebase from 'firebase'
 import 'firebase/firestore'
-
 import firebaseConfig from './firebaseConfig'
 const firebaseApp = firebase.initializeApp(firebaseConfig)
-
-export default firebaseApp.fireStore()
+export default firebaseApp.firestore()
