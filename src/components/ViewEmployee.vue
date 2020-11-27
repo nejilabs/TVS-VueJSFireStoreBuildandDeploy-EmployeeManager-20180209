@@ -59,6 +59,19 @@ export default {
           });
         });
     },
+    deleteEmployee() {
+      if (confirm("Are you sure?")) {
+        db.collection("employees")
+          .where("employee_id", "==", this.$route.params.employee_id)
+          .get()
+          .then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+              doc.ref.delete();
+              this.$router.push("/");
+            });
+          });
+      }
+    },
   },
 };
 </script>
