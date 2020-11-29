@@ -8,10 +8,14 @@
       </ul>
 
       <ul class="right">
-        <li><router-link to="/">Dashboard</router-link></li>
-        <li><router-link to="/login">Login</router-link></li>
-        <li><router-link to="/register">Register</router-link></li>
-        <li><button class="btn black" v-on:click="logout">Logout</button></li>
+        <li v-if="isLoggedIn"><router-link to="/">Dashboard</router-link></li>
+        <li v-if="!isLoggedIn"><router-link to="/login">Login</router-link></li>
+        <li v-if="!isLoggedIn">
+          <router-link to="/register">Register</router-link>
+        </li>
+        <li v-if="isLoggedIn">
+          <button class="btn black" v-on:click="logout">Logout</button>
+        </li>
       </ul>
     </div>
   </nav>
@@ -28,6 +32,13 @@ export default {
     };
   },
 
+  created() {
+    if (firebase.auth().currentUser) {
+      this.isLoggedIn = true;
+      this.currentUser = firebase.auth().currentUser.email;
+    }
+  },
+
   methods: {
     logout() {
       firebase
@@ -35,7 +46,7 @@ export default {
         .signOut()
         .then(() => {
           alert("You have been logged out");
-          this.$router.push("/login");
+          this.$router.go({ path: this.$router.path });
         });
     },
   },
