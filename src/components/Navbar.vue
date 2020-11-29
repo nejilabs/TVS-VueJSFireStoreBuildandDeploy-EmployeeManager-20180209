@@ -9,6 +9,11 @@
 
       <ul class="right">
         <li v-if="isLoggedIn"><router-link to="/">Dashboard</router-link></li>
+        <li v-if="isLoggedIn">
+          <router-link to="/"
+            ><span class="email btn grey">{{ currentUser }}</span></router-link
+          >
+        </li>
         <li v-if="!isLoggedIn"><router-link to="/login">Login</router-link></li>
         <li v-if="!isLoggedIn">
           <router-link to="/register">Register</router-link>
@@ -52,3 +57,9 @@ export default {
   },
 };
 </script>
+
+<style>
+.email {
+  padding-right: 10px;
+}
+</style>
