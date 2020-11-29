@@ -2,7 +2,7 @@
   <div>
     <div class="container">
       <div class="row">
-        <div class="col s12 m8 offset-m2">
+        <div class="col s12 m12">
           <div class="login card-panel grey lighten-4 black-text center">
             <h3>Register</h3>
             <form action="index.html">
@@ -47,9 +47,8 @@ export default {
         .createUserWithEmailAndPassword(this.email, this.password)
         .then(
           (user) => {
-            // console.log(user);
             alert(`Account Created for ${user.email}`);
-            this.$router.go({ path: this.$router.path });
+            this.$router.push("/");
           },
           (err) => {
             alert(err.message);

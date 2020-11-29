@@ -2,7 +2,7 @@
   <div>
     <div class="container">
       <div class="row">
-        <div class="col s12 m12 off-set-m2">
+        <div class="col s12 m12">
           <div class="login card-panel grey lighten-4 center">
             <h3>Login</h3>
             <form>
