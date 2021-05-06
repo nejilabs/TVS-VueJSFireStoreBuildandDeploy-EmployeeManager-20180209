@@ -1,6 +1,9 @@
-# tvs-vue-firestore
+# TVS-VueJSFireStoreBuildandDeploy-EmployeeManager-20180209
 
-> Just to learn more about Vue.js and Firebase Firestore.
+> Traversy Media - Vue.js & FireStore - Build & Deploy (Feb 9, 2018) 
+
+Link: https://www.youtube.com/playlist?list=PLillGF-RfqbYsOOycB67Raf9dwmL6Y31M
+
 
 ## Build Setup
 
